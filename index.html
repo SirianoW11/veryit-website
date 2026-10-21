@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VeryIT – unkomplizierter IT-Support, Computerhilfe und Netzwerklösungen.">
+  <title>VeryIT – IT-Support, der weiterhilft</title>
+  <link rel="icon" type="image/png" href="assets/veryit-logo.png">
+  <style>
+    :root {
+      --bg: #050914;
+      --panel: #0c1628;
+      --panel-light: #10213a;
+      --text: #f5f8ff;
+      --muted: #b6c4d9;
+      --cyan: #12c9f5;
+      --cyan-dark: #079fc9;
+      --line: rgba(120, 170, 220, .18);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text); background:
+        radial-gradient(ellipse at 80% -10%, rgba(0, 100, 220, .22), transparent 36rem),
+        radial-gradient(ellipse at 10% 40%, rgba(0, 155, 255, .08), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--line); background: rgba(5, 9, 20, .82); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); }
+    nav { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 800; letter-spacing: -.04em; }
+    .brand img { width: 52px; height: 52px; object-fit: cover; border-radius: 10px; }
+    .brand span span { color: var(--cyan); }
+    .navlinks { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .94rem; }
+    .navlinks a:hover { color: white; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 10px; background: var(--cyan); color: #03101a; font-weight: 750; border: 1px solid transparent; transition: .18s ease; cursor: pointer; }
+    .btn:hover { background: #71e5ff; transform: translateY(-1px); }
+    .btn.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+    .btn.secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+    .hero { padding: 88px 0 76px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--cyan); text-transform: uppercase; font-size: .78rem; font-weight: 800; letter-spacing: .16em; }
+    h1 { font-size: clamp(2.6rem, 5.8vw, 4.8rem); line-height: 1.03; letter-spacing: -.065em; margin: 18px 0; max-width: 720px; }
+    h1 .accent { color: var(--cyan); }
+    .lead { font-size: 1.12rem; color: var(--muted); max-width: 620px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .note { margin-top: 22px; color: #8fa4bf; font-size: .88rem; }
+    .hero-card { background: linear-gradient(145deg, rgba(18, 39, 68, .95), rgba(7, 15, 29, .96)); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 24px 80px rgba(0, 0, 0, .25); }
+    .hero-logo { display: block; width: min(100%, 280px); margin: 0 auto 18px; border-radius: 14px; }
+    .status { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 13px; background: rgba(3, 10, 20, .58); color: var(--muted); font-size: .93rem; }
+    .dot { width: 9px; height: 9px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 14px var(--cyan); flex: 0 0 auto; }
+    section { padding: 68px 0; }
+    .section-head { max-width: 650px; margin-bottom: 28px; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.65rem); line-height: 1.15; letter-spacing: -.045em; margin: 10px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: rgba(12, 22, 40, .86); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: var(--cyan); background: rgba(18, 201, 245, .1); font-size: 1.35rem; margin-bottom: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .card p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; }
+    .about-panel { border-radius: 22px; padding: 30px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(9, 30, 53, .9), rgba(10, 17, 31, .95)); }
+    .about-panel .big { color: var(--cyan); font-size: 3rem; font-weight: 850; line-height: 1; letter-spacing: -.06em; }
+    .about p { color: var(--muted); }
+    .points { display: grid; gap: 12px; margin-top: 18px; }
+    .point { display: flex; gap: 12px; align-items: flex-start; }
+    .check { color: var(--cyan); font-weight: 900; }
+    .contact-box { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 34px; border-radius: 22px; border: 1px solid rgba(18, 201, 245, .3); background: linear-gradient(110deg, rgba(12, 43, 69, .88), rgba(10, 18, 32, .94)); }
+    .contact-box p { color: var(--muted); margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); padding: 26px 0; color: #8fa4bf; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .hero, .about { grid-template-columns: 1fr; }
+      .hero { padding-top: 58px; gap: 32px; }
+      .hero-card { max-width: 480px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .contact-box { grid-template-columns: 1fr; }
+      .navlinks { gap: 14px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      nav { min-height: 66px; }
+      .brand img { width: 42px; height: 42px; }
+      .navlinks a:not(.nav-contact) { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+      .hero { padding: 48px 0 50px; }
+      .hero-card { padding: 18px; }
+      .contact-box { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Hauptnavigation">
+      <a class="brand" href="#start" aria-label="VeryIT Startseite">
+        <img src="assets/veryit-logo.png" alt="VeryIT Logo">
+        <span>Very<span>IT</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a class="btn nav-contact" href="#kontakt">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="start">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Persönlich. Verständlich. Technisch.</div>
+        <h1>IT-Probleme?<br><span class="accent">Wir helfen weiter.</span></h1>
+        <p class="lead">Unkomplizierter IT-Support für Computer, WLAN und Netzwerke. Wir erklären verständlich, suchen die Ursache und helfen dabei, eine passende Lösung zu finden.</p>
+        <div class="actions">
+          <a class="btn" href="#kontakt">Support anfragen <span aria-hidden="true">&nbsp;→</span></a>
+          <a class="btn secondary" href="#services">Unsere Services</a>
+        </div>
+        <p class="note">Direkt, ehrlich und ohne unnötiges IT-Fachchinesisch.</p>
+      </div>
+      <aside class="hero-card" aria-label="VeryIT Vorstellung">
+        <img class="hero-logo" src="assets/veryit-logo.png" alt="VeryIT – unser Logo">
+        <div class="status"><span class="dot"></span><span>Persönlicher Support statt komplizierter Umwege</span></div>
+      </aside>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Was wir machen</div>
+          <h2>Hilfe, wenn die Technik nicht mitspielt.</h2>
+          <p>Von kleinen Computerproblemen bis zur Einrichtung eines Heimnetzwerks: Wir unterstützen dich mit einer verständlichen und praxisnahen Lösung.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">⌘</div>
+            <h3>Computer & Geräte</h3>
+            <p>Unterstützung bei Einrichtung, Updates, Softwareinstallation und typischen PC-Problemen.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⌁</div>
+            <h3>WLAN & Netzwerk</h3>
+            <p>Hilfe bei WLAN-Problemen, Router-Konfiguration und dem Verbinden von Geräten.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⚙</div>
+            <h3>Fehleranalyse</h3>
+            <p>Wir gehen Problemen Schritt für Schritt auf den Grund und erklären, was wir tun.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⇧</div>
+            <h3>Installation & Updates</h3>
+            <p>Hilfe beim Einrichten von Programmen, Geräten und wichtigen Systemaktualisierungen.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">▤</div>
+            <h3>Backup & Daten</h3>
+            <p>Unterstützung beim Einrichten einfacher Datensicherungen und beim Organisieren von Dateien.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">?</div>
+            <h3>IT-Fragen</h3>
+            <p>Du weisst nicht weiter? Wir helfen dir, technische Fragen zu verstehen und Lösungen zu finden.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns">
+      <div class="wrap about">
+        <div class="about-panel">
+          <div class="big">VeryIT</div>
+          <h2>Junges Team. Klare Lösungen.</h2>
+          <p>Wir sind zwei IT-begeisterte Kollegen, die Technik verständlich und zugänglich machen möchten.</p>
+        </div>
+        <div>
+          <div class="eyebrow">Über uns</div>
+          <h2>Gute Hilfe beginnt mit Zuhören.</h2>
+          <p>Unser Ziel ist es, nicht einfach irgendetwas umzustellen, sondern zuerst zu verstehen, wo das Problem liegt. Danach erklären wir die möglichen Schritte in klarer Sprache.</p>
+          <div class="points">
+            <div class="point"><span class="check">✓</span><span><strong>Persönlich:</strong> direkter Kontakt und individuelle Unterstützung.</span></div>
+            <div class="point"><span class="check">✓</span><span><strong>Verständlich:</strong> nachvollziehbare Erklärungen statt Fachchinesisch.</span></div>
+            <div class="point"><span class="check">✓</span><span><strong>Transparent:</strong> wir besprechen mögliche Lösungen, bevor es losgeht.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h2>Wie können wir dir helfen?</h2>
+            <p>Beschreibe kurz dein IT-Problem. Wir können dann gemeinsam die nächsten Schritte besprechen.</p>
+          </div>
+          <a class="btn" href="mailto:kontakt@veryit.example?subject=Supportanfrage%20VeryIT">Support anfragen →</a>
+        </div>
+        <p class="note">Demo für ein Schulprojekt: Ersetzt vor einer echten Veröffentlichung die Beispiel-E-Mail-Adresse und ergänzt eure tatsächlichen Kontaktdaten.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> VeryIT · IT-Support</span>
+      <span>Demo-Website für ein Schulprojekt</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
