@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="de">
 <head>
@@ -89,34 +88,12 @@
       font-size: .94rem;
     }
 
-    .navlinks a:not(.nav-contact) {
+    .navlinks a {
       transition: color .2s ease;
     }
 
-    .navlinks a:not(.nav-contact):hover {
+    .navlinks a:hover {
       color: white;
-    }
-
-    /* AGB oben wie die normalen Navigationslinks */
-    .navlinks .agb-nav {
-      display: inline;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      color: var(--muted);
-      background: transparent;
-      font: inherit;
-      box-shadow: none;
-      transform: none;
-      transition: color .2s ease;
-    }
-
-    .navlinks .agb-nav:hover,
-    .navlinks .agb-nav:focus-visible {
-      color: white;
-      background: transparent;
-      box-shadow: none;
-      transform: none;
     }
 
     /* Handy-Menü */
@@ -217,7 +194,7 @@
       color: #8fa4bf;
       font-size: .88rem;
     }
-    
+
     .note {
       margin-top: 22px;
       color: #8fa4bf;
@@ -304,7 +281,7 @@
     }
 
     .card h3 {
-      margin: 5 0 20px;
+      margin: 5px 0 20px;
       font-size: 1.12rem;
     }
 
@@ -312,47 +289,6 @@
       color: var(--muted);
       margin: 0;
       font-size: .96rem;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .about-panel {
-      border-radius: 22px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(9, 30, 53, .9), rgba(10, 17, 31, .95));
-    }
-
-    .about-panel .big {
-      color: var(--cyan);
-      font-size: 3rem;
-      font-weight: 850;
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
-
-    .about p { color: var(--muted); }
-
-    .points {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .point {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .check {
-      color: var(--cyan);
-      font-weight: 900;
     }
 
     .contact-box {
@@ -422,8 +358,7 @@
     .footer-inner a:hover { color: var(--cyan); }
 
     @media (max-width: 800px) {
-      .hero, .about { grid-template-columns: 1fr; }
-      .hero { padding-top: 58px; gap: 32px; }
+      .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 32px; }
       .hero-card { max-width: 480px; }
       .cards { grid-template-columns: 1fr 1fr; }
       .contact-box { grid-template-columns: 1fr; }
@@ -465,32 +400,13 @@
 
       .navlinks.open { display: flex; }
 
-      .navlinks a,
-      .navlinks a:not(.nav-contact) {
+      .navlinks a {
         display: block;
         padding: 12px 14px;
         border-radius: 8px;
       }
 
-      .navlinks a:not(.nav-contact):hover {
-        background: rgba(18, 201, 245, .1);
-      }
-
-      .navlinks .nav-contact {
-        text-align: center;
-        margin-top: 4px;
-      }
-
-      .navlinks .agb-nav {
-        padding: 12px 14px;
-        color: var(--muted);
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-      }
-
-      .navlinks .agb-nav:hover {
-        color: white;
+      .navlinks a:hover {
         background: rgba(18, 201, 245, .1);
       }
 
@@ -540,12 +456,12 @@
         aria-controls="main-menu"
       >☰</button>
 
-<div class="navlinks" id="main-menu">
-  <a href="#services">Services</a>
-  <a href="#ueber-uns">Über uns</a>
-  <a href="agb/" class="agb-nav">AGB</a>
-  <a class="btn nav-contact" href="#kontakt">Kontakt</a>
-</div>
+      <div class="navlinks" id="main-menu">
+        <a href="#services">Services</a>
+        <a href="ueber-uns/">Über uns</a>
+        <a href="agb/">AGB</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
     </nav>
   </header>
 
@@ -621,29 +537,6 @@
       </div>
     </section>
 
-    <section id="ueber-uns">
-      <div class="wrap about">
-        <div class="about-panel">
-          <div class="big">VeryIT</div>
-          <h2>Junges Team. Klare Lösungen.</h2>
-          <p>Wir sind zwei IT-begeisterte Kollegen, die Technik verständlich und zugänglich machen möchten.</p>
-        </div>
-
-        <div>
-          <div class="eyebrow">Über uns</div>
-          <h2>Gute Hilfe beginnt mit Zuhören.</h2>
-          <p>Unser Ziel ist es, nicht einfach irgendetwas umzustellen, sondern zuerst zu verstehen, wo das Problem liegt. Danach erklären wir die möglichen Schritte in klarer Sprache.</p>
-
-          <div class="points">
-            <div class="point"><span class="check">✓</span><span><strong>Persönlich:</strong> direkter Kontakt und individuelle Unterstützung.</span></div>
-            <div class="point"><span class="check">✓</span><span><strong>Verständlich:</strong> nachvollziehbare Erklärungen statt Fachchinesisch.</span></div>
-            <div class="point"><span class="check">✓</span><span><strong>Transparent:</strong> wir besprechen mögliche Lösungen, bevor es losgeht.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- Auffälliger AGB-Button vor dem Footer -->
     <section class="agb-cta" aria-labelledby="agb-heading">
       <div class="wrap">
@@ -657,9 +550,10 @@
           <a class="btn agb-button" href="agb/">
             AGB ansehen <span aria-hidden="true">&nbsp;→</span>
           </a>
+        </div>
       </div>
     </section>
-    
+
     <section id="kontakt">
       <div class="wrap">
         <div class="contact-box">
@@ -671,9 +565,8 @@
 
           <a class="btn" href="mailto:veryit.info@gmail.com?subject=Supportanfrage%20VeryIT">Support anfragen →</a>
         </div>
-      <div>
-        <p class="demo-note">Demo für ein Schulprojekt: Keine echtes Geschäft.</p>
-      </div>
+
+        <p class="demo-note">Demo für ein Schulprojekt: Kein echtes Geschäft.</p>
       </div>
     </section>
   </main>
