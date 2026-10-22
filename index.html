@@ -351,13 +351,19 @@
       transform: translateY(-2px);
     }
 
+    /* ---------- Footer ---------- */
     footer {
       margin-top: 40px;
       padding: 64px 0 24px;
       background: #000;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      border-top: 1px solid rgba(120, 170, 220, .18);
+      color: #b6c4d9;
       font-size: .95rem;
+    }
+
+    .footer-wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
     .footer-top {
@@ -369,7 +375,7 @@
     .footer-info {
       font-style: normal;
       line-height: 1.9;
-      color: var(--text);
+      color: #f5f8ff;
     }
 
     .footer-info strong {
@@ -381,12 +387,17 @@
     .footer-links {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 8px;
     }
 
-    .footer a { transition: color .2s ease; }
-    .footer a:hover,
-    footer a:hover { color: var(--cyan); }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    footer a:hover { color: #12c9f5; }
 
     .footer-bottom {
       display: flex;
@@ -395,7 +406,7 @@
       gap: 12px;
       margin-top: 48px;
       padding-top: 20px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(120, 170, 220, .18);
       color: #8fa4bf;
       font-size: .88rem;
     }
@@ -625,23 +636,21 @@
   </main>
 
   <footer>
-    <div class="wrap">
+    <div class="footer-wrap">
       <div class="footer-top">
- <address class="footer-info">
-  <strong>VeryIT</strong>
-  <a href="https://www.google.com/maps/place/Bahnhofstrasse+21,+5400+Baden/@47.4767002,8.3055917,17">Bahnhofstrasse 21</a><br>
-  <a href="https://www.google.com/maps/place/Bahnhofstrasse+21,+5400+Baden/@47.4767002,8.3055917,17">5400 Baden</a><br>
-  <a href="tel:+41767085683">+41 76 708 56 83</a><br>
-  <a href="mailto:veryit.info@gmail.com">veryit.info@gmail.com</a>
-</address>
+        <address class="footer-info">
+          <strong>VeryIT</strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bahnhofstrasse+21+5400+Baden" target="_blank" rel="noopener">Bahnhofstrasse 21<br>5400 Baden</a><br>
+          <a href="tel:+41767085683">+41 76 708 56 83</a><br>
+          <a href="mailto:veryit.info@gmail.com">veryit.info@gmail.com</a>
         </address>
 
-        <nav class="footer-links" aria-label="Footer-Navigation">
+        <div class="footer-links">
           <a href="#services">Services</a>
           <a href="ueber-uns/">Über uns</a>
           <a href="agb/">AGB</a>
           <a href="#kontakt">Kontakt</a>
-        </nav>
+        </div>
       </div>
 
       <div class="footer-bottom">
