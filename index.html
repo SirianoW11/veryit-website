@@ -357,6 +357,14 @@
 
     .footer-inner a:hover { color: var(--cyan); }
 
+    /* Alle grossen Buttons gleich breit */
+    .actions .btn,
+    .agb-button,
+    .contact-box .btn {
+      width: 210px;
+      white-space: nowrap;
+    }
+    
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 32px; }
       .hero-card { max-width: 480px; }
@@ -574,7 +582,7 @@
   <footer>
     <div class="wrap footer-inner">
       <span>© <span id="year"></span> VeryIT · IT-Support</span>
-      <span><a href="agb/">AGB</a> · Demo-Website für ein Schulprojekt</span>
+      <span><a href="agb/">AGB</a> · <a href="ueber-uns/">Über uns</a> · Demo-Website für ein Schulprojekt</span>
     </div>
   </footer>
 
