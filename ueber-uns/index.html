@@ -157,7 +157,7 @@
       fill: #25405f;
     }
 
-        .photo:has(img) {
+    .photo:has(img) {
       padding: 15px;
     }
 
@@ -193,25 +193,69 @@
 
     /* ---------- Footer ---------- */
     footer {
-      border-top: 1px solid var(--line);
-      padding: 26px 0;
+      margin-top: 40px;
+      padding: 64px 0 24px;
+      background: #000;
+      border-top: 1px solid rgba(120, 170, 220, .18);
+      color: #b6c4d9;
+      font-size: .95rem;
+    }
+
+    .footer-wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+    }
+
+    .footer-info {
+      font-style: normal;
+      line-height: 1.9;
+      color: #f5f8ff;
+    }
+
+    .footer-info strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    footer a:hover { color: #12c9f5; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(120, 170, 220, .18);
       color: #8fa4bf;
       font-size: .88rem;
     }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-inner a:hover { color: var(--cyan); }
 
     /* ---------- Handy ---------- */
     @media (max-width: 700px) {
       .team { grid-template-columns: 1fr; gap: 48px; }
       main { padding: 44px 0 56px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
     }
 
     @media (max-width: 560px) {
@@ -301,7 +345,7 @@
           <ul class="details">
             <li class="name">Ylli Morina</li>
             <li>Geschäftsführer</li>
-            <li><a href="tel:+41 76 774 61 45">+41 76 774 61 35</a></li>
+            <li><a href="tel:+41767746135">+41 76 774 61 35</a></li>
             <li><a href="mailto:veryit.info@gmail.com">veryit.info@gmail.com</a></li>
           </ul>
         </article>
@@ -309,7 +353,7 @@
         <!-- Person 2 -->
         <article>
           <div class="photo">
-          <img src="Foto_Siriano_Netfon.jpg" alt="Siriano Wayne">
+            <img src="Foto_Siriano_Netfon.jpg" alt="Siriano Wayne">
           </div>
           <ul class="details">
             <li class="name">Siriano Wayne</li>
@@ -324,9 +368,27 @@
   </main>
 
   <footer>
-    <div class="wrap footer-inner">
-      <span>© <span id="year"></span> VeryIT · IT-Support</span>
-      <span><a href="../agb/">AGB</a> · Demo-Website für ein Schulprojekt</span>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <address class="footer-info">
+          <strong>VeryIT</strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bahnhofstrasse+21+5400+Baden" target="_blank" rel="noopener">Bahnhofstrasse 21<br>5400 Baden</a><br>
+          <a href="tel:+41767085683">+41 76 708 56 83</a><br>
+          <a href="mailto:veryit.info@gmail.com">veryit.info@gmail.com</a>
+        </address>
+
+        <div class="footer-links">
+          <a href="../#services">Services</a>
+          <a href="./">Über uns</a>
+          <a href="../agb/">AGB</a>
+          <a href="../#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> VeryIT · IT-Support</span>
+        <span>Demo-Website für ein Schulprojekt</span>
+      </div>
     </div>
   </footer>
 
