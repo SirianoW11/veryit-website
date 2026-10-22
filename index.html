@@ -201,18 +201,27 @@
       font-size: .88rem;
     }
 
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
     .hero-card {
+      width: fit-content;
       background: linear-gradient(145deg, rgba(18, 39, 68, .95), rgba(7, 15, 29, .96));
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 28px;
+      padding: 12px;
       box-shadow: 0 24px 80px rgba(0, 0, 0, .25);
     }
 
     .hero-logo {
       display: block;
-      width: min(100%, 200px);
-      margin: 0 auto 18px;
+      width: 200px;
+      max-width: 100%;
+      margin: 0;
       border-radius: 14px;
     }
 
@@ -222,6 +231,7 @@
       gap: 10px;
       padding: 14px;
       border-radius: 13px;
+      border: 1px solid var(--line);
       background: rgba(3, 10, 20, .58);
       color: var(--muted);
       font-size: .93rem;
@@ -367,13 +377,12 @@
     
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 32px; }
-      .hero-card { max-width: 480px; }
       .cards { grid-template-columns: 1fr 1fr; }
       .contact-box { grid-template-columns: 1fr; }
       .navlinks { gap: 14px; }
     }
 
-    @media (max-width: 560px) {
+        .hero-card { padding: 18px; }
       .wrap { width: min(100% - 28px, 1120px); }
 
       nav {
@@ -488,13 +497,16 @@
         <p class="note">Direkt, ehrlich und ohne unnötiges IT-Gerede.</p>
       </div>
 
-      <aside class="hero-card" aria-label="VeryIT Vorstellung">
-        <img class="hero-logo" src="assets/veryit-logo.png" alt="VeryIT – unser Logo">
+      <div class="hero-side">
+        <aside class="hero-card" aria-label="VeryIT Vorstellung">
+          <img class="hero-logo" src="assets/veryit-logo.png" alt="VeryIT – unser Logo">
+        </aside>
+
         <div class="status">
           <span class="dot"></span>
           <span>Persönlicher Support statt komplizierter Umwege</span>
         </div>
-      </aside>
+      </div>
     </div>
 
     <section id="services">
