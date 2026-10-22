@@ -166,7 +166,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
       border-radius: 8px;
     }
 
@@ -196,23 +196,14 @@
       margin-top: 40px;
       padding: 64px 0 24px;
       background: #000;
-      border-top: 1px solid rgba(120, 170, 220, .18);
-      color: #b6c4d9;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
       font-size: .95rem;
     }
 
     .footer-wrap {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 64px 0 24px;
-      background: #000;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .95rem;
+      width: 100%;
+      padding: 0 clamp(20px, 4vw, 56px);
     }
 
     .footer-top {
@@ -220,6 +211,12 @@
       grid-template-columns: 1fr auto;
       gap: 40px;
       align-items: start;
+    }
+
+    .footer-info {
+      font-style: normal;
+      line-height: 1.9;
+      color: var(--text);
     }
 
     .footer-info strong {
@@ -238,8 +235,11 @@
       margin-top: calc(1.1rem * 1.4 + 8px);
     }
 
-    .footer a { transition: color .2s ease; }
-    .footer a:hover,
+    footer a {
+      color: inherit;
+      transition: color .2s ease;
+    }
+
     footer a:hover { color: var(--cyan); }
 
     .footer-bottom {
@@ -254,11 +254,12 @@
       font-size: .88rem;
     }
 
-    /* ---------- Natel ---------- */
+    /* ---------- Handy ---------- */
     @media (max-width: 700px) {
       .team { grid-template-columns: 1fr; gap: 48px; }
       main { padding: 44px 0 56px; }
       .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-links { margin-top: 0; }
     }
 
     @media (max-width: 560px) {
@@ -337,11 +338,11 @@
 
       <div class="team">
 
-        <!-- Ylloi -->
+        <!-- Ylli -->
         <article>
           <div class="photo">
             <img src="Neue_Lernende_2026_Bild1_Ausschnitt_2.JPG" alt="Ylli Morina">
-                      </div>
+          </div>
           <ul class="details">
             <li class="name">Ylli Morina</li>
             <li>Geschäftsführer</li>
