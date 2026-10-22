@@ -212,23 +212,27 @@
       gap: 40px;
     }
 
-    .footer-info {
-      font-style: normal;
-      line-height: 1.9;
-      color: #f5f8ff;
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
     }
 
     .footer-info strong {
       display: block;
       margin-bottom: 8px;
       font-size: 1.1rem;
+      line-height: 1.4;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 8px;
+      gap: 0;
+      line-height: 1.9;
+      margin-top: calc(1.1rem * 1.4 + 8px);
     }
 
     footer a {
